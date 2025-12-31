@@ -1,0 +1,21 @@
+                                introduction
+- react is a component-based javaScript library not a framework. 
+- qn open-source library created by Facebook company. gets 100K stars on github.
+- reactive is declarative(تصريحى) not impertive(أمرى)
+  .for example when you go to an artist to draw a landscape or other when you tel him it's up to you then it's declarative 
+  ,but when you tell him the details you want him to do then it's impretive.  
+- update node.js to LTS(latest version): 
+  *control panel-> programs-> uninstall-> Node.js for uninstallation.
+  *install LTS from https://nodejs.org/en/download/   
+  *add Node.js(folder containing Node_modules and other installed files) path to environment variables.
+  *run node -v (it will print v24.12.0).
+
+                              create react app     
+- used command: 'npx create-react-app app-name'. 
+  the app name must be in lower case with no capital letter. 
+  npx is a npm(node package manager) package runner.
+- another way to create react app without using 'npx' 
+  is by installing the package globally 'npm install create-react-app -g' 
+  then locally at each time we want to create new app 'create-react-app app-name'
+- navigate inside the created project 'cd app-name' and run 'npm start' to run the local host server on port 3000 initially.
+- edit in src/app.js which contains a function returns the home page html structure.                               
