@@ -1,16 +1,22 @@
-                                introduction
-- react is a component-based javaScript library not a framework. 
-- qn open-source library created by Facebook company. gets 100K stars on github.
-- reactive is declarative(تصريحى) not impertive(أمرى)
+                                   general
+- 'https://github.com/gopinav/React-19-Tutorials/tree/main/react-essentials' lecturer github repo about react.
+- writing convention cases: camel-case-> semonHany, pascal-case-> SemonHany, snake-case-> semon_hany, kebab-case-> semon-hany
+- commenting HTML tag which is nested inside another we use -> {/*content*/}
+
+                                 introduction
+- react is a component-based javaScript library can be used as a front-end framework. 
+- qn open-source library created and managed by Facebook company. gets +220K stars on github.
+- react is declarative(تصريحى) not impertive(أمرى)
   .for example when you go to an artist to draw a landscape or other when you tel him it's up to you then it's declarative 
   ,but when you tell him the details you want him to do then it's impretive.  
 - update node.js to LTS(latest version): 
   *control panel-> programs-> uninstall-> Node.js for uninstallation.
   *install LTS from https://nodejs.org/en/download/   
-  *add Node.js(folder containing Node_modules and other installed files) path to environment variables.
+  *add Node.js(folder containing Node_modules and other installed files) path to environment variables. 
+   but usually added automatically by installer.
   *run node -v (it will print v24.12.0).
 
-                              create react app     
+                                create react app     
 - used command: 'npx create-react-app app-name'. 
   the app name must be in lower case with no capital letter. 
   npx is a npm(node package manager) package runner.
@@ -18,4 +24,49 @@
   is by installing the package globally 'npm install create-react-app -g' 
   then locally at each time we want to create new app 'create-react-app app-name'
 - navigate inside the created project 'cd app-name' and run 'npm start' to run the local host server on port 3000 initially.
-- edit in src/app.js which contains a function returns the home page html structure.                               
+- edit in src/app.js which contains a function returns the home page html structure.    
+
+- the latest creation command-> 'npm create vite@latest'. 
+  the advantage of vite is that it applies the changes instantly without the need to refresh the full page.
+- with vite creation some choices will be appear to select from including ['Project name', 'Select a variant'-> 'JavaScript + React Compiler',
+  'Use rolldown-vite (Experimental)'-> 'No', 'install with npm and start now' create localhost server link]
+- 'npm run dev' inside the project path to start the server.
+
+                               folder structure
+- package.json file contain the installed dependencies and scripts to deal with the project(start, buid oe test)
+- package-lock.json file contain the instaled dependencies information including the version.
+  necessary to reinstall them ('npm install') while colning repo with ignored node_modules folder which in turn contains the installed packages. 
+- .gitignore file contain the sensitive or large folders that shouldn't push into github repo.
+- public folder contain HTML files and generally accessed logos and images.
+- public/index.html contain the page basic structure including div with id 'root' 
+  that rendered with ReactDOM.createRoot later in src/index.js after build the basic html content inculded in it in src/app.js(app component).  
+- to update the installed react run 'npm install react@latest react-dom@latest @types/react@latest @types/react-dom@latest' 
+  which represent the latest stable release of the installed dependencies and some devdependencies.      
+- the project created by vite is the same except that it has two extra files for configuration 
+  and the src/index.js in the app created by create-react-app called src/main.jsx in vite.
+
+                                   components
+- react page contains 5 components(header, footer, main section, side nav and the app component containing all of them).
+- there are two types of react components -> 
+  *stateless functional components: simple functions return HTML structure, also called dumb or presentational components, used as much as possible and are mainly used in UI building.
+  *stateful class component: a class extends another component class and have a method render that return HTML structure in its execution body, are more feature rich have their own data and state
+   , provide lifecycle hooks (provide access to properties and states without using class this feature newly appeared in react V16.7.0 alpha), use complex UI logic, also called smart or container components.
+- in creating components and export them from their js file then import in app.js and use them as a custom HTML tag (openening + closing tags or self-closing tag) in the return or render of the App.
+- the convention of naming components (js or jsx) files is with kebab or pascal case (declared in line 2);
+- with default export we can import the exported structure with another name, while with named export we must use the exact name in import.
+- we import the named export inside {} while the default exported outside the curly brackets like in-> import React, {Component} from 'react'.
+- without using jsx(javaScript extensible markup language(jsXML)) we return the HTML structure using React.createElement() method that takes the tag name as the first argument
+  , object of tag's attributes and their values as a second parameter and the tag content in the third one.
+- there are some differences between normal html and jsx like the simple tag attribute (class) called className as a DOM property, for in label tag called 'htmlFor' and tabindex in the input tag called 'tabIndex'.
+- in jsx must return a single root element not multiple html elements. 
+  each tag must be properly closed even the self closing tags '<br/>', unlike the normal html.
+- we deals with the properties come from the parent component using 'props' parameter passed to the child functional component or using this pointer in class comp 'this.props'.
+  It's is an object containing the attributes declared inside the component custom tag (user-defined read-only attributes) and a default entry named 'children' if it has content.
+- the component declared properties in parent (app) component if their values aren't string should be put inside {} ({true}, {47.8}, {[87,35,08]}).
+- while destructing the props in the function or constructor passed argument, we can set default values used for missing or undefined properties but won't work with 0 or null values.
+- string interpolation in angular done using {{}} in HTML template, while in react using {} in js DOM (jsx).
+- states are muttable variables declared inside the component.
+- using the built-in method this.setState({}) in class comp will dynamically change the variables (also in the DOM where they were injected), unlike when change the state directly ehich will br static then.
+- setState() method is non-blocking (syncronous) so it has a call-back function as a second parameter to access the updated state values asyncronously
+  , also when we try to update the state value multiple times sequentially it will affect for only once while using this.state so we can have access to prevState property in the first parameter as a call-back function.
+- install extension 'ES7 React, Redux,...' then to create the class component standard structure use 'rce + tab'.
