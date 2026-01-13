@@ -64,9 +64,17 @@
   It's is an object containing the attributes declared inside the component custom tag (user-defined read-only attributes) and a default entry named 'children' if it has content.
 - the component declared properties in parent (app) component if their values aren't string should be put inside {} ({true}, {47.8}, {[87,35,08]}).
 - while destructing the props in the function or constructor passed argument, we can set default values used for missing or undefined properties but won't work with 0 or null values.
-- string interpolation in angular done using {{}} in HTML template, while in react using {} in js DOM (jsx).
+- string interpolation in angular done using {{}} in HTML template, while in react using {} in js DOM (jsx) to interpolate the value of any decalred variable in this component [bool, string, integer, double or event a function-name(function reference)].
 - states are muttable variables declared inside the component.
 - using the built-in method this.setState({}) in class comp will dynamically change the variables (also in the DOM where they were injected), unlike when change the state directly ehich will br static then.
 - setState() method is non-blocking (syncronous) so it has a call-back function as a second parameter to access the updated state values asyncronously
   , also when we try to update the state value multiple times sequentially it will affect for only once while using this.state so we can have access to prevState property in the first parameter as a call-back function.
-- install extension 'ES7 React, Redux,...' then to create the class component standard structure use 'rce + tab'.
+- install extension 'ES7 React, Redux,...' then to create the class component standard structure use 'rce + tab'. and 'rfce + tab' for functional component file structure.
+- class member functions declared without keyword 'function'.
+- we can create function nested in another that happens in functional componenet while its member functions deflared inside it.
+- in event handling we assign a reference to the event Handler function (inside {}) to the jsx event property like 'onClick' to be called automatically when the event occured.
+- we need to bind the 'this' object to the event handler reference in class component to give it the accessibility to class' 'this' object properties.
+- eventHandler binding approaches: 1- event-property={function-name.bind(this)}.   2- in class constructor-> this.function-name=function-name.bind(this).
+  3- event-property={()=>function-name()}   4- declare handler property as an arrow function.
+- when binding an array variable in JSX it dealt as an <ul></ul> element containing each element in the array as a <li></li> html element. 
+  Each li element has a 'key' property with unique value.
