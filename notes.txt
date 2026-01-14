@@ -1,7 +1,6 @@
                                    general
 - 'https://github.com/gopinav/React-19-Tutorials/tree/main/react-essentials' lecturer github repo about react.
 - writing convention cases: camel-case-> semonHany, pascal-case-> SemonHany, snake-case-> semon_hany, kebab-case-> semon-hany
-- commenting HTML tag which is nested inside another we use -> {/*content*/}
 
                                  introduction
 - react is a component-based javaScript library can be used as a front-end framework. 
@@ -60,17 +59,19 @@
 - there are some differences between normal html and jsx like the simple tag attribute (class) called className as a DOM property, for in label tag called 'htmlFor' and tabindex in the input tag called 'tabIndex'.
 - in jsx must return a single root element not multiple html elements. 
   each tag must be properly closed even the self closing tags '<br/>', unlike the normal html.
+- comment in jsx done with the syntax {/*content*/}. 
 - we deals with the properties come from the parent component using 'props' parameter passed to the child functional component or using this pointer in class comp 'this.props'.
   It's is an object containing the attributes declared inside the component custom tag (user-defined read-only attributes) and a default entry named 'children' if it has content.
 - the component declared properties in parent (app) component if their values aren't string should be put inside {} ({true}, {47.8}, {[87,35,08]}).
 - while destructing the props in the function or constructor passed argument, we can set default values used for missing or undefined properties but won't work with 0 or null values.
-- string interpolation in angular done using {{}} in HTML template, while in react using {} in js DOM (jsx) to interpolate the value of any decalred variable in this component [bool, string, integer, double or event a function-name(function reference)].
+- string interpolation in angular done using {{}} in HTML template, while in react using {} in js DOM (jsx) to interpolate the value of any decalred variable in this component 
+  [bool, string, integer, double or event a function-name(function reference)] or even an explicit value of type other than string.
 - states are muttable variables declared inside the component.
 - using the built-in method this.setState({}) in class comp will dynamically change the variables (also in the DOM where they were injected), unlike when change the state directly ehich will br static then.
 - setState() method is non-blocking (syncronous) so it has a call-back function as a second parameter to access the updated state values asyncronously
   , also when we try to update the state value multiple times sequentially it will affect for only once while using this.state so we can have access to prevState property in the first parameter as a call-back function.
 - install extension 'ES7 React, Redux,...' then to create the class component standard structure use 'rce + tab'. and 'rfce + tab' for functional component file structure.
-- class member functions declared without keyword 'function'.
+- class member functions declared without keyword 'function'. also member properties declared without let, const or var keyword.
 - we can create function nested in another that happens in functional componenet while its member functions deflared inside it.
 - in event handling we assign a reference to the event Handler function (inside {}) to the jsx event property like 'onClick' to be called automatically when the event occured.
 - we need to bind the 'this' object to the event handler reference in class component to give it the accessibility to class' 'this' object properties.
@@ -78,3 +79,9 @@
   3- event-property={()=>function-name()}   4- declare handler property as an arrow function.
 - when binding an array variable in JSX it dealt as an <ul></ul> element containing each element in the array as a <li></li> html element. 
   Each li element has a 'key' property with unique value.
+- applying CSS styles on react component done using external css file by importing it in the top component file 
+  ,or inline CSS which is an object with properties in camel-case instead of kebab(in external sheet) and string values
+  or using CSS modules which must import with custom name refer to the whole file content and access its class selectors using -> module-name.class-name 
+- css module is an external css file sheet but has locally scoped affect.
+- using multiple className value -> className={`${primaryClass} ${headingClass}`}
+- since reusable components have different behaviors, their event handlers must declared by each parent component call this child component.
