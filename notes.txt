@@ -100,3 +100,7 @@
 - shallow comparison: *for primitive types-> if two variables have the same value and are of the same type returns true else false.
   *for complex types-> if two variables refer to the same exact objects(reference or shallow copy) returns true else false.
 - memo functional component is a higher-order component(HOC) acts as the pure class component preventing unnecessary rerendering by applying props shallow comparison.
+- reference methods: *React.createRef()-> inside a constructor scope, it returns object containing 'current' property represent the element itself.
+  *callbackRef-> elementRef= element=>{this.element=element;}
+- we can use reference to DOM elements to handle inside a class component, we can also refer to a child component to access its own methods and properties
+- forward reference to child fuctional component to refer to its own DOM elements without the need to decalre react reference which require a constructor scope, rarely used in cases such with higher-order components.
