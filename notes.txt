@@ -104,3 +104,7 @@
   *callbackRef-> elementRef= element=>{this.element=element;}
 - we can use reference to DOM elements to handle inside a class component, we can also refer to a child component to access its own methods and properties
 - forward reference to child fuctional component to refer to its own DOM elements without the need to decalre react reference which require a constructor scope, rarely used in cases such with higher-order components.
+- React Portals are used to render a child component outside its parent’s DOM hierarchy for better positional styling (e.g., modals), while still preserving React event bubbling.
+- portals are components their JSX returned using ReactDOM.createPortal() with a second parameter represents a div tag follow the div with id='root' in index.html file -> <div id="root"></div>   <div id="modal-root"></div>
+- Error Boundries used to catch error thrown in lifycycle methods, rendering or constructors of the nested child component, although errors handling in eventHandlers methods should be done through try-catch.
+- Error Boundries are class components declare any of lifecycle error phase methods: *componentDidCatch(err, info)-> log error information  or  *static getDerivedStateFromError(error)-> render a fallback UI based on a state variable when the wrapped component throw error.
