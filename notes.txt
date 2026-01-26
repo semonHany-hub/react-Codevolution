@@ -108,3 +108,11 @@
 - portals are components their JSX returned using ReactDOM.createPortal() with a second parameter represents a div tag follow the div with id='root' in index.html file -> <div id="root"></div>   <div id="modal-root"></div>
 - Error Boundries used to catch error thrown in lifycycle methods, rendering or constructors of the nested child component, although errors handling in eventHandlers methods should be done through try-catch.
 - Error Boundries are class components declare any of lifecycle error phase methods: *componentDidCatch(err, info)-> log error information  or  *static getDerivedStateFromError(error)-> render a fallback UI based on a state variable when the wrapped component throw error.
+- HOC (higher order component) used to share reusable functionality without repeating code redundantly
+- HOC is a functional component with original component passed as a parameter and return new component (not jsx).
+  have internally declared class component representing the new component its render method return the original component with the shared functionality and state passed as props.
+- in the original child component-> export default HOC-name(originalCompName)
+- HOC has the advantage that the shared state property between multiple components one of them doesn't affect its value in another.
+- rendering props is another pattern to reuse common functionality like HOC
+- render props done by passing prop named render (by convention) its value is arrow function return the child component with the functionality and state passed as props from the reusable component.
+  in the reusable component we call the value function(this.props.render() or props.children()) and passing the state and functionality.
