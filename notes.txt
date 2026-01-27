@@ -116,3 +116,10 @@
 - rendering props is another pattern to reuse common functionality like HOC
 - render props done by passing prop named render (by convention) its value is arrow function return the child component with the functionality and state passed as props from the reusable component.
   in the reusable component we call the value function(this.props.render() or props.children()) and passing the state and functionality.
+- Context concept used to pass props from component in higher level in react tree to deeply nested components without the need to repass it through each level inbetween.
+- in separate comp create context 'React.createContext()' and its Provider and Consumer 'context.Provider&context.Consumer' export them by name.
+  wrap the higher level comp with a jsx custom tag of the contextProvider, the pass the props by assign them to a provider standard property named 'value'. to enable consuming them by the wrapped comp or its children.
+  in the component is to consume the passed prop use the contextConsumer, in which we wrap an arrow function with props passed as a parameter and return jsx.
+- we can set a default value to the context while creating 'React.createContext("semon")' in this case we don't need to use the provider at all
+- we can use contextType property instead of consumer components, but it has limitations that this concept must used with class component and can't be used with multiple contexts, unlike consumer custom tags
+- using contextType-> className.contextType=createdContext(outside the class scope) or static contextType=createdContext(inside the class) then access it using 'this.context'.
