@@ -1,3 +1,6 @@
 [submodule "hello-world"]
 	path = hello-world
 	url = https://github.com/semonHany-hub/Hello-world_react.git
+[submodule "react-http"]
+	path = react-http
+	url = https://github.com/semonHany-hub/react-http.git

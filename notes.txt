@@ -123,3 +123,4 @@
 - we can set a default value to the context while creating 'React.createContext("semon")' in this case we don't need to use the provider at all
 - we can use contextType property instead of consumer components, but it has limitations that this concept must used with class component and can't be used with multiple contexts, unlike consumer custom tags
 - using contextType-> className.contextType=createdContext(outside the class scope) or static contextType=createdContext(inside the class) then access it using 'this.context'.
+- to use react http install 'axios' package which ia a promise-based http client used with browsers(react) and backend(node.js) to make API requests.
