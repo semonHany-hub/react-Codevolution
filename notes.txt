@@ -124,3 +124,9 @@
 - we can use contextType property instead of consumer components, but it has limitations that this concept must used with class component and can't be used with multiple contexts, unlike consumer custom tags
 - using contextType-> className.contextType=createdContext(outside the class scope) or static contextType=createdContext(inside the class) then access it using 'this.context'.
 - to use react http install 'axios' package which ia a promise-based http client used with browsers(react) and backend(node.js) to make API requests.
+- hooks used to provide class features without need to use classes. used to avoid some limitations like spliting the stateful logic of the class into separate functionalities based on related parts.
+- useState hook imported from 'react'. It's a function that can be called and passed a default state value, destruct stateVariable and its setMethod using array destruction to inject later in jsx.
+- useState hook also enable using prevStateVariable value and return its updated value to avoid the confusion with fast updating process like counterIncrement using loop.
+- useState can be used with variable of any dataType including object but it has limitation that when updating an object entry the rest reset to the initial value 
+  as it can't automatically update&merge ,unlike setState in classComp. This limition solved using ES6 feature (spread operator) to the previous value or directly the destructed stateVariable.
+- Math.floor(Math.random()*10)+1 -> generates random digits between (0-9) the shift the result by 1 (1-10). the number we multiply with(eg.10) represent the number of possible numbers will be generated.
