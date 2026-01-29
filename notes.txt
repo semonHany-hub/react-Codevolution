@@ -130,3 +130,9 @@
 - useState can be used with variable of any dataType including object but it has limitation that when updating an object entry the rest reset to the initial value 
   as it can't automatically update&merge ,unlike setState in classComp. This limition solved using ES6 feature (spread operator) to the previous value or directly the destructed stateVariable.
 - Math.floor(Math.random()*10)+1 -> generates random digits between (0-9) the shift the result by 1 (1-10). the number we multiply with(eg.10) represent the number of possible numbers will be generated.
+- useEffect hook used to perform side effects in functional component, avoid repeating commen code between componentDidMount() and componentDidUpdate, combine related code in componentDidMount() and componentWillUnmount() in class lifecycle methods.
+- useEffect hook function receive as a first parameter a callback function that executed after each time the functional component render (mount&update). 
+- useEffect hook has second parameter represent an array of stateVariables it will be executed after updating them. It's by default an array of all state variables. if we set an empty array the call-back function will be executed only once for mount.
+- useEffect hook call-back function returns another arrow function executed when the functional component will unmount.
+- when we call a function inside useEffect and we want to declare a prop related to this function inside the dependency array we put this function declaration totally inside useEffect.
+- interval IDs (eg. setInterval()) are side-effects so shouldn't be stored in class state which contain the UI data.

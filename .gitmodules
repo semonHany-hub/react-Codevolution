@@ -7,3 +7,6 @@
 [submodule "state-hook"]
 	path = state-hook
 	url = https://github.com/semonHany-hub/state-hook.git
+[submodule "effect-hook"]
+	path = effect-hook
+	url = https://github.com/semonHany-hub/effect-hook.git
