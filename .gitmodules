@@ -10,3 +10,6 @@
 [submodule "effect-hook"]
 	path = effect-hook
 	url = https://github.com/semonHany-hub/effect-hook.git
+[submodule "context-hook"]
+	path = context-hook
+	url = https://github.com/semonHany-hub/context-hook

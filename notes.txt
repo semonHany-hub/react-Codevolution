@@ -120,9 +120,9 @@
 - in separate comp create context 'React.createContext()' and its Provider and Consumer 'context.Provider&context.Consumer' export them by name.
   wrap the higher level comp with a jsx custom tag of the contextProvider, the pass the props by assign them to a provider standard property named 'value'. to enable consuming them by the wrapped comp or its children.
   in the component is to consume the passed prop use the contextConsumer, in which we wrap an arrow function with props passed as a parameter and return jsx.
-- we can set a default value to the context while creating 'React.createContext("semon")' in this case we don't need to use the provider at all
+- we can set a default value to the context while creating 'React.createContext("semon")' in this case we don't need to use the provider, as it will be the app component by default.
 - we can use contextType property instead of consumer components, but it has limitations that this concept must used with class component and can't be used with multiple contexts, unlike consumer custom tags
-- using contextType-> className.contextType=createdContext(outside the class scope) or static contextType=createdContext(inside the class) then access it using 'this.context'.
+- using contextType-> className.contextType=createdContext (outside the class scope) or static contextType=createdContext (inside the class) then access it using 'this.context'.
 - to use react http install 'axios' package which ia a promise-based http client used with browsers(react) and backend(node.js) to make API requests.
 - hooks used to provide class features without need to use classes. used to avoid some limitations like spliting the stateful logic of the class into separate functionalities based on related parts.
 - useState hook imported from 'react'. It's a function that can be called and passed a default state value, destruct stateVariable and its setMethod using array destruction to inject later in jsx.
@@ -136,3 +136,4 @@
 - useEffect hook call-back function returns another arrow function executed when the functional component will unmount.
 - when we call a function inside useEffect and we want to declare a prop related to this function inside the dependency array we put this function declaration totally inside useEffect.
 - interval IDs (eg. setInterval()) are side-effects so shouldn't be stored in class state which contain the UI data.
+- useContext hook solve the complexity of multiple contextConsumer components, done by passing the createdContext to useContext() and assign its value to a variable, but still require to use the context.Provider component.
