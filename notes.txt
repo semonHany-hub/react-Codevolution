@@ -137,3 +137,6 @@
 - when we call a function inside useEffect and we want to declare a prop related to this function inside the dependency array we put this function declaration totally inside useEffect.
 - interval IDs (eg. setInterval()) are side-effects so shouldn't be stored in class state which contain the UI data.
 - useContext hook solve the complexity of multiple contextConsumer components, done by passing the createdContext to useContext() and assign its value to a variable, but still require to use the context.Provider component.
+- useReducer hook is an alternative to useState gor state management, but it's more primitive than useState. corresponds to the array prototype method 'reduce' in javaScript.
+- useReducer((currentState, action)=>{}, initialState) returns [newState, dispatch method]. newState value used in jsx rendering and dispatch method used to trigger the action based on some event
+- useReducer hook used for local state management enable using multiple useReducers of state as object of multiple state variables. also for global state management in collaboration with useContext.
