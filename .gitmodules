@@ -16,3 +16,6 @@
 [submodule "reducer-hook"]
 	path = reducer-hook
 	url = https://github.com/semonHany-hub/reducer-hook
+[submodule "callback-memo-hooks"]
+	path = callback-memo-hooks
+	url = https://github.com/semonHany-hub/callback-memo-hooks.git

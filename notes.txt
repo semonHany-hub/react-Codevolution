@@ -96,7 +96,7 @@
 - use <React.Fragment> </React.Fragment> to prevent using nested div tags in react components. It does the same as using empty openning tag +empty closing tag '<></>'. 
   That arises from the idea that the child react component should return a single enclosed parent tag.
 - pure class component create by extending another pure component the difference distinguishes it from the regular component is in the updating phase when the regular doesn't check the method shouldComponentUpdate() instead it always return true
-  , while pure component apply shallow comparison between the (current-props, current-state) snd (nextprops, nextstate) on the equality case and if it true returns false and doesn't call render() the vice versa.
+  , while pure component apply shallow comparison between the (current-props, current-state) and (nextprops, nextstate) on the equality case and if it true returns false and doesn't call render() ,the vice versa.
 - shallow comparison: *for primitive types-> if two variables have the same value and are of the same type returns true else false.
   *for complex types-> if two variables refer to the same exact objects(reference or shallow copy) returns true else false.
 - memo functional component is a higher-order component(HOC) acts as the pure class component preventing unnecessary rerendering by applying props shallow comparison.
@@ -140,3 +140,8 @@
 - useReducer hook is an alternative to useState gor state management, but it's more primitive than useState. corresponds to the array prototype method 'reduce' in javaScript.
 - useReducer((currentState, action)=>{}, initialState) returns [newState, dispatch method]. newState value used in jsx rendering and dispatch method used to trigger the action based on some event
 - useReducer hook used for local state management enable using multiple useReducers of state as object of multiple state variables. also for global state management in collaboration with useContext.
+- shallow comparison for memo functional component declared in lines (100-102) has limitation that for functions(eventHandlers) it always return false (shouldComponentUpdate(nextProps, nextState) always return true)
+  , as the parent create a different reference(memory address) to it for each rerender (eg.break memoization). useCallback hook is the solution for that limitation.
+- the original goal for using React.memo() is for performance optimization, so useCallback hook used for further optimization.
+- the eventHandler function passed as a first parameter to the useCallback() while the second param represent the dependency list of elements that the useCallback hook will keep the memoization version until any of them change.
+- useMemo hook also used for performance optimization as it used to set a specific dependency list for a function that takes a long time, to not affect the other state variables computations rate while re-rendering.
