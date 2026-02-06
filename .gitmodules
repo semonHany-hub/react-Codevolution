@@ -22,3 +22,6 @@
 [submodule "ref-hook"]
 	path = ref-hook
 	url = https://github.com/semonHany-hub/ref-hook.git
+[submodule "custom-hook"]
+	path = custom-hook
+	url = https://github.com/semonHany-hub/custom-hook.git

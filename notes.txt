@@ -191,3 +191,6 @@
                                  useRef
 - React.createRef() used only inside the class component constructor. when we want to use it in a child functional comp we forward the ref, but if we want to declare it directly in the functional comp use useRef() hook.
 - useRef() also used to refer to interval ID (e.g setInterval()) to keep its value between update renders to be cleared later properly.
+
+                               custom hook
+- we create custom hook (starting with 'use') to avoid repeating reusable logic instead of HOC or rendering props
