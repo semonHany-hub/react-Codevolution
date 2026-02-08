@@ -4,16 +4,17 @@
 
                                  introduction
 - react is a component-based javaScript library can be used as a front-end framework. 
-- qn open-source library created and managed by Facebook company. gets +220K stars on github.
-- react is declarative(تصريحى) not impertive(أمرى)
-  .for example when you go to an artist to draw a landscape or other when you tel him it's up to you then it's declarative 
-  ,but when you tell him the details you want him to do then it's impretive.  
+- an open-source library created and managed by Facebook company (Jordan Walke software engineer). gets +220K stars on github.
+- react create virtual DOM in memory to apply any necessary manipulation on it before applying them on the browser DOM.
+
+                                    Setup
+- react depend on npm which is included in node.js.
 - update node.js to LTS(latest version): 
-  *control panel-> programs-> uninstall-> Node.js for uninstallation.
+  *control panel-> programs-> uninstall-> Node.js   for uninstallation.
   *install LTS from https://nodejs.org/en/download/   
   *add Node.js(folder containing Node_modules and other installed files) path to environment variables. 
    but usually added automatically by installer.
-  *run node -v (it will print v24.12.0).
+  *run 'node -v' (it will print v24.12.0).
 
                                 create react app     
 - used command: 'npx create-react-app app-name'. 
@@ -25,21 +26,23 @@
 - navigate inside the created project 'cd app-name' and run 'npm start' to run the local host server on port 3000 initially.
 - edit in src/app.js which contains a function returns the home page html structure.    
 
-- the latest creation command-> 'npm create vite@latest'. 
-  the advantage of vite is that it applies the changes instantly without the need to refresh the full page.
-- with vite creation some choices will be appear to select from including ['Project name', 'Select a variant'-> 'JavaScript + React Compiler',
+- the latest react creation builder is vite-> 'npm install -g create-vite'.
+- 'npm create vite@latest react-app'. 
+- the advantage of vite is that it applies the changes instantly without the need to refresh the full page.
+- with vite creation some choices will be appear to select including ['Project name', 'Select a variant'-> 'JavaScript + React Compiler',
   'Use rolldown-vite (Experimental)'-> 'No', 'install with npm and start now' create localhost server link]
-- 'npm run dev' inside the project path to start the server.
+- 'npm run dev' inside the project path to start the development server.
+
+- to update the installed react run 'npm install react@latest react-dom@latest @types/react@latest @types/react-dom@latest' 
 
                                folder structure
 - package.json file contain the installed dependencies and scripts to deal with the project(start, buid oe test)
 - package-lock.json file contain the instaled dependencies information including the version.
-  necessary to reinstall them ('npm install') while colning repo with ignored node_modules folder which in turn contains the installed packages. 
+  necessary to reinstall them ('npm install') while cloning repo with ignored node_modules folder which in turn contains the installed packages. 
 - .gitignore file contain the sensitive or large folders that shouldn't push into github repo.
 - public folder contain HTML files and generally accessed logos and images.
 - public/index.html contain the page basic structure including div with id 'root' 
   that rendered with ReactDOM.createRoot later in src/index.js after build the basic html content inculded in it in src/app.js(app component).  
-- to update the installed react run 'npm install react@latest react-dom@latest @types/react@latest @types/react-dom@latest' 
   which represent the latest stable release of the installed dependencies and some devdependencies.      
 - the project created by vite is the same except that it has two extra files for configuration 
   and the src/index.js in the app created by create-react-app called src/main.jsx in vite.
@@ -97,7 +100,7 @@
 
 - since reusable components have different behaviors, their event handlers must declared by each parent component call this resuable child component.
                             
-                             component lifycycle
+                             component lifecycle
 - class component lifycycle methods categoried into-> 
   *mounting: constructor(props), render(), getDerivedStateFromProps(props, state), componentDidMount()
   *updating: getDerivedStateFromProps(props, state), render(), shouldComponentUpdate(nextprops, nextstate), getSnapshotBeforeUpdate(prevprops, prevstate), componentDidUpdate(prevprops, prevstate, snapshot)
@@ -194,3 +197,5 @@
 
                                custom hook
 - we create custom hook (starting with 'use') to avoid repeating reusable logic instead of HOC or rendering props
+
+-install 'react developer tools' extension on Microsoft Edge browser to use its services + 'jam' for debugging.
