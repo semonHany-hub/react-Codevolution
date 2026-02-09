@@ -33,7 +33,19 @@
   'Use rolldown-vite (Experimental)'-> 'No', 'install with npm and start now' create localhost server link]
 - 'npm run dev' inside the project path to start the development server.
 
-- to update the installed react run 'npm install react@latest react-dom@latest @types/react@latest @types/react-dom@latest' 
+- to update the installed react run 'npm install react@latest react-dom@latest @types/react@latest @types/react-dom@latest'
+
+                                    ES6 
+- react depend on ES6 which is the 6th version of ecmaScript published in 2015 to standardize javaScript.
+- new features ES6 have over js are (classes, arrow function, variables(let,var,const), array methods(e.g .map()), destructuring, modules, ternary operator, spread operator).
+- ES6 classes differ from dart in [enable access superClass constructor using super() inside the child constructor instead of constructor chaining 
+  - objects created with new keyword(mandatory) - properties accessed and assigned inside the constructor without having to be declared first].
+- arrow function is shorter version from regular function (use arrow instead of 'function' keyword + remove brackets and 'return' keyword with single statement).
+- with classes the regular function executed by the caller object('this' keyword will refer to it) (window, document, HTML element, ...) (e.g with addEventListener())
+  , while the class arrow function executed by the instance object defined it whatever the caller is.
+- before ES6 variables were declared only using 'var' keyword, but with ES6 'let', 'const' became available too.
+- 'var' declared variable has function scope not block(e.g loops) scope, while 'let' and 'const' variables has block scope(including function scope).
+- map() method used in react to render list items. its callback function takes three parameter: currentValue, index(optional), callerArray(optional).
 
                                folder structure
 - package.json file contain the installed dependencies and scripts to deal with the project(start, buid oe test)
