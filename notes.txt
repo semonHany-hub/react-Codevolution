@@ -46,6 +46,25 @@
 - before ES6 variables were declared only using 'var' keyword, but with ES6 'let', 'const' became available too.
 - 'var' declared variable has function scope not block(e.g loops) scope, while 'let' and 'const' variables has block scope(including function scope).
 - map() method used in react to render list items. its callback function takes three parameter: currentValue, index(optional), callerArray(optional).
+- Destructing property JavaScript used for both arrays and objects to create standalone variables from their entries(or elements). 
+- Destruction in array require preserving the order and when we exclude one element we make its corresponding position empty surrounded by two commas (leave out it but keep the comma).
+- new Date() in ES6 create object from the class Date by the default constructor (with no parameters) which returns the current date of calling the method. Have methods like getDate() return the day number, getMonth() (months indexed from 0 to 11), getFullYear()
+- Destructing object properties doesn't care about the order. Done by setting the variables the same name given to the entries keys. We can destructing specific entries rather than others. We can give default value to the variables doesn't exist in the object.
+- Destructing nested objects done by referencing this nested object by its key then colon and curly braces to further destructing its items
+- ex. const person = { firstName: "John", lastName: "Doe", age: 50, car: {brand: 'Ford', model: 'Mustang',} };
+  let {firstName, car: { brand, model }} = person;
+  let message = My name is ${firstName}, and I drive a ${brand} ${model}.;
+- Destruction in react used for props and hooks like useState or useReducer that return array.
+- Spread operator used to spread part or all of array or object elements to combine easily in another new collection
+- Using JavaScript modules to separate code done by marking the script tag  with type="module" to enable importing exported modules.
+- export can be named or default, the named done inline (individually) or combined for once in the bottom, while default export must be for once per a module. 
+- Importing named exported variables done only by destructing them with the same name inside curly braces, unlike the default exported one.
+- Template strings allow you to write strings that span multiple lines and include embedded expressions. 
+- Use backticks (`) instead of quotes and can include: ( Multiple lines without \n, Expressions inside ${}, Quotes without escaping (back slash used to prevent conflict of the nested quotes with the same type))
+- injecting expression with ${} involve variables. computations, ternary-operator (const message = `Status: ${isAdmin ? 'Admin' : 'User'}`;), map (const list = `You have ${items.length} items:\n ${items.map(item => `- ${item}`).join('\n')}`;)
+  , or template tag: JavaScript automatically: -Separates string parts into an array. -Passes each ${} value as a separate argument. -Calls the tag function with them. #string= #expressions+1. we can held multiple expressions arguments into an array using the rest parameter.
+- ex. //function highlight(strings, ..fname) (\n) (function highlight(strings, fname1, fname2) { let x = fname1.toUpperCase();   let y = fname2.toUpperCase();   return strings[0] + x + strings[1] + y + strings[2];})
+  let text = highlight`Hello ${name1} and ${name2}, how are you?`;
 
                                folder structure
 - package.json file contain the installed dependencies and scripts to deal with the project(start, buid oe test)
